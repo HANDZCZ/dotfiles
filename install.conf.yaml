@@ -1,0 +1,28 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/nvim:
+        path: nvim
+    ~/.config/ranger/rc.conf:
+        path: ranger/rc.conf
+    ~/.config/ranger/plugins/:
+        glob: true
+        path: ranger/plugins/*
+    ~/.rustup/settings.toml:
+        path: rustup/settings.toml
+    ~/.bashrc:
+        path: bash/.bashrc
+    ~/.bash_logout:
+        path: bash/.bash_logout
+    ~/.gitconfig:
+        path: git/.gitconfig
+
+- create:
+    - ~/.vim/plugged
+    - ~/.vim/undodir
+    - ~/.vim/sessions
