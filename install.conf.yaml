@@ -21,6 +21,8 @@
         path: bash/.bash_logout
     ~/.gitconfig:
         path: git/.gitconfig
+    ~/bin:
+        path: bin
 
 - create:
     - ~/.vim/plugged

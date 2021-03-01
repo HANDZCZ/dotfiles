@@ -19,6 +19,7 @@ set cmdheight=2
 set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+set spelllang=cs,en
 
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
@@ -32,6 +33,8 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'voldikss/vim-floaterm'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'mhinz/vim-startify'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 " Startify
@@ -67,10 +70,11 @@ let g:lightline = {
   \ }
 
 let mapleader = " "
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+let maplocalleader = "\\"
+"inoremap <silent><expr> <TAB>
+"            \ pumvisible() ? "\<C-n>" :
+"            \ <SID>check_back_space() ? "\<TAB>" :
+"            \ coc#refresh()
 
 "command! -nargs=0 Prettier :CocCommand prettier.formatFile
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -149,10 +153,9 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 let g:which_key_map['r'] = [':RnvimrToggle', 'ranger']
-let g:which_key_map['e'] = [':CocCommand explorer', 'explorer']
-let g:which_key_map['f'] = [':CocCommand explorer --preset floating', 'floating-explorer']
+let g:which_key_map['e'] = [':CocCommand explorer --open-action-strategy tab', 'explorer']
+let g:which_key_map['f'] = [':CocCommand explorer --preset floating --open-action-strategy tab', 'floating-explorer']
 let g:which_key_map['u'] = [':UndotreeToggle', 'undo-tree']
-"let g:which_key_map['/'] = [':Commentary', '(un)comment']
 let g:which_key_map['l'] = {
             \ 'name' : '+lsp',
             \ 'g' : {
@@ -217,3 +220,5 @@ let g:which_key_map['s'] = {
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
+
+let g:pandoc#syntax#conceal#use = 0
