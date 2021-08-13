@@ -23,6 +23,7 @@ set spelllang=cs,en
 
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'matze/vim-move'
 Plug 'joshdick/onedark.vim'
