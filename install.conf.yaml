@@ -23,6 +23,8 @@
         path: git/.gitconfig
     ~/bin:
         path: bin
+    ~/.config/starship.toml:
+        path: starship/starship.toml
 
 - create:
     - ~/.vim/plugged
