@@ -2,6 +2,7 @@
     link:
         create: true
         relink: true
+        force: true
 
 - clean: ['~']
 
@@ -25,6 +26,12 @@
         path: bin
     ~/.config/starship.toml:
         path: starship/starship.toml
+    ~/.config/alacritty/alacritty.yml:
+        path: alacritty/alacritty.yml
+    ~/.local/share/fonts:
+        path: fonts
+    ~/.config/rofi:
+        path: rofi
 
 - create:
     - ~/.vim/plugged
