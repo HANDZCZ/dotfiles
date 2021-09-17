@@ -12,7 +12,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export EDITOR='nvim'
-alias ll='ls -lah'
+alias ll='exa -lag --icons -s type'
 alias cd..='cd ..'
 alias lports='ss -lunt'
 alias cat="bat"
