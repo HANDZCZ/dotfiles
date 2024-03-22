@@ -22,6 +22,12 @@
         path: bash/.bash_logout
     ~/.gitconfig:
         path: git/.gitconfig
+    ~/.gitconfig.ssh:
+        path: git/.gitconfig.ssh
+    ~/.gitconfig.github-ssh:
+        path: git/.gitconfig.github-ssh
+    ~/.gitconfig.gitlab:
+        path: git/.gitconfig.gitlab
     ~/bin:
         path: bin
     ~/.config/starship.toml:

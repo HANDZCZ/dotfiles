@@ -3,3 +3,11 @@
 	email = handz@email.cz
 [credential]
 	helper = store
+
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+    path = .gitconfig.ssh
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+    path = .gitconfig.github-ssh
+
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/**"]
+    path = .gitconfig.gitlab
