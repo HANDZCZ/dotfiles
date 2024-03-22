@@ -78,6 +78,7 @@ let maplocalleader = "\\"
 "            \ coc#refresh()
 
 "command! -nargs=0 Prettier :CocCommand prettier.formatFile
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-space> coc#refresh()
 
@@ -223,3 +224,5 @@ let g:which_key_map['s'] = {
 call which_key#register('<Space>', "g:which_key_map")
 
 let g:pandoc#syntax#conceal#use = 0
+let g:markdown_folding = 1
+"let g:pandoc#modules#disabled = ["folding"]
