@@ -3,11 +3,33 @@
 	email = handz@email.cz
 [credential]
 	helper = store
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[core]
+	autocrlf = false
+[user]
+    signingkey = ~/.ssh/git/id_ed25519_signing_key
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed-signers
 
-[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
-    path = .gitconfig.ssh
-[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
-    path = .gitconfig.github-ssh
+
+#[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+#    path = .gitconfig.github-ssh
+
 
 [includeIf "hasconfig:remote.*.url:https://gitlab.com/**"]
-    path = .gitconfig.gitlab
+    path = ~/.config/git/.gitconfig.gitlab
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:*/**"]
+    path = ~/.config/git/.gitconfig.gitlab
+
+
+[includeIf "hasconfig:remote.*.url:https://git.handz.eu.org/**"]
+    path = ~/.config/git/.gitconfig.git.handz.eu.org
+[includeIf "hasconfig:remote.*.url:ssh://git@git-ssh.handz.eu.org:222/**"]
+    path = ~/.config/git/.gitconfig.git.handz.eu.org
+
+
+[includeIf "hasconfig:remote.*.url:git@ssh.suyu.dev:*/**"]
+    path = ~/.config/git/.gitconfig.git.suyu.dev
