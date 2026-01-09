@@ -55,7 +55,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
             \ { 'c': '~/.config/' },
             \ { 'v': '~/.config/nvim/init.vim' },
-            \ '~/WinDocuments',
+            \ { 's': '~/.bashrc' },
             \ ]
 
 " rnvimr
