@@ -18,8 +18,17 @@ alias cd..='cd ..'
 alias lports='ss -lunt'
 alias cat="bat"
 alias trim_img="mogrify -trim"
-alias gspull="git stash && git pull && git stash pop"
 
+# Docker
+alias dc-stats="docker container stats --no-stream"
+alias ds-stats="docker system df -v"
+
+# Git
+alias gspull="git stash && git pull && git stash pop"
+alias glog="git log --graph --show-signature --format=fuller"
+alias grcad="git rebase -i --committer-date-is-author-date"
+
+# YT-dl
 alias ytdl_vid='yt-dlp --no-mark-watched --geo-bypass --no-playlist --cache-dir ~/.cache/youtube-dl --embed-thumbnail --add-metadata --merge-output-format mp4 -f "bestvideo[height<=1080]+bestaudio[ext=m4a]"'
 alias ytdl_au='yt-dlp --no-mark-watched --geo-bypass --no-playlist --cache-dir ~/.cache/youtube-dl --embed-thumbnail --add-metadata -f "bestaudio[ext=m4a]"'
 alias ytdl_playlist_vid='yt-dlp --ignore-errors --no-mark-watched --geo-bypass --yes-playlist --cache-dir ~/.cache/youtube-dl --embed-thumbnail --add-metadata --merge-output-format mp4 -f "bestvideo[height<=1080]+bestaudio[ext=m4a]" --output "%(playlist_index)s. %(title)s.%(ext)s"'
